@@ -35,6 +35,24 @@
   .sum .v{font-size:14px;font-weight:600}
   .sum.a .v{color:var(--accent)} .sum.b .v{color:var(--green)}
   .sum.c .v{color:var(--blue)} .sum.d .v{color:var(--red)}
+  .action-card{margin-bottom:16px;padding:16px 18px;border-radius:16px;
+    background:linear-gradient(135deg,#eef6ff,#eafaf1);border:1px solid #cfe3ff}
+  .ac-head{font-weight:700;font-size:15px;color:var(--blue);margin-bottom:10px;letter-spacing:.5px}
+  .ac-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ac-item{border-radius:12px;padding:10px 12px;background:rgba(255,255,255,.72)}
+  .ac-item.moat{border-left:4px solid var(--accent)}
+  .ac-item.do{border-left:4px solid var(--green)}
+  .ac-item.avoid{border-left:4px solid var(--red)}
+  .ac-item.hook{border-left:4px solid var(--amber)}
+  .ac-k{font-size:12px;font-weight:700;margin-bottom:3px}
+  .ac-item.moat .ac-k{color:var(--accent)}
+  .ac-item.do .ac-k{color:var(--green)}
+  .ac-item.avoid .ac-k{color:var(--red)}
+  .ac-item.hook .ac-k{color:var(--amber)}
+  .ac-v{font-size:13px;color:var(--ink);line-height:1.55}
+  .fold{margin-top:6px}
+  .fold summary{cursor:pointer;font-weight:600;color:var(--sub);padding:8px 0;user-select:none}
+  .fold[open] summary{color:var(--accent);margin-bottom:8px}
   section{background:var(--card);border:1px solid var(--line);border-radius:16px;
     padding:22px 24px;margin-bottom:16px;scroll-margin-top:16px}
   h2{font-size:18px;margin:0 0 14px;padding-left:11px;border-left:4px solid var(--accent)}
@@ -63,6 +81,7 @@
   @media(max-width:760px){
     .nav{display:none}
     .summary{grid-template-columns:1fr}
+    .ac-grid{grid-template-columns:1fr}
     main{padding:18px}
   }
 </style>
@@ -100,6 +119,16 @@
       <div class="sum b"><div class="k">护城河</div><div class="v">团内唯一能接住他的人（高身份×高互动）</div></div>
       <div class="sum c"><div class="k">当前策略</div><div class="v">游戏/动漫承接 + 控节奏 + 管理约定</div></div>
       <div class="sum d"><div class="k">核心风险</div><div class="v">进展过快，需控节奏防下头</div></div>
+    </div>
+
+    <div class="action-card">
+      <div class="ac-head">今日行动卡 · 开播前一眼抓重点</div>
+      <div class="ac-grid">
+        <div class="ac-item moat"><div class="ac-k">护城河</div><div class="ac-v">团内唯一能接住他的人（高身份×高互动）。别处他只是刷子，你这他被认真对待。</div></div>
+        <div class="ac-item do"><div class="ac-k">最该做</div><div class="ac-v">用 FPS / 二次元 / 宠物梗自然接话；控节奏，别每晚聊到透支。</div></div>
+        <div class="ac-item avoid"><div class="ac-k">最该避</div><div class="ac-v">助推冲动消费、把"看海约定"私人化、借"只有我能回"索票、吃醋占有。</div></div>
+        <div class="ac-item hook"><div class="ac-k">接话锚点</div><div class="ac-v">"你刷到的那个 FPS 集锦" / 宠物猫梗，比直接聊他战绩更稳。</div></div>
+      </div>
     </div>
 
     <section id="s1">
@@ -164,30 +193,33 @@
 
     <section id="s4">
       <h2>四、补充情报汇总</h2>
-      <h3>迭代2 情报</h3>
-      <ul>
-        <li>该大哥有别的爱播，给团里每个人都刷，但整团只有本主播能"回"（接住、回应、有来有回）。</li>
-        <li>消费身份在团内"稀释"，护城河是<b>互动质量</b>而非消费独占。</li>
-      </ul>
-      <h3>迭代3 情报（本次截图）</h3>
-      <ul>
-        <li><b>爆发式消费</b>：入坑两天近万票，第一天 9000、第二天 700+，总贡献 9020 基本来自这两日。</li>
-        <li><b>PK 冲动型</b>：第一天守十轮、跟潇洒哥对打、砍千票；第二天只守主播一人。</li>
-        <li><b>颜值触发</b>：因为觉得主播好看而回关。</li>
-        <li><b>兴趣锚点</b>：爱打游戏、看动漫。</li>
-        <li><b>关系进展极快</b>：深夜长聊到凌晨 4 点，已有"看海约定"，话题进入生活细节。</li>
-        <li><b>主播已主动划边界</b>：「弟弟是直男，有空白天」——拒绝关系升级，保持边界。</li>
-      </ul>
-      <h3>迭代4 情报（抖音公开主页观察 · 均为其浏览/推荐内容，非本人发布）</h3>
-      <ul>
-        <li><b>抖音互相关注</b>：香克斯在抖音也关注了主播，且主播已回关；他在抖音与直播两端都 connect 你（此为账号关系，独立于浏览内容）。</li>
-        <li><b>常刷 FPS 游戏内容</b>：主页浏览流以突击位战绩类（「一突全场第一」）为主，说明对 FPS 感兴趣；结合深夜长聊互晒战绩，他确实也玩，可聊 Valorant/CS，但话题锚点用"你刷到的那个集锦"更稳。</li>
-        <li><b>二次元/动漫梗</b>：常刷动画/梗类，与"看动漫"吻合。</li>
-        <li><b>跨国恋/约会内容</b>：常刷「和斯拉夫女生约会」「网恋樱花妹七个月」类，反映偏好；可作谈资但勿当真、勿假定其本人经历。</li>
-        <li><b>宠物（猫）</b>：常刷「三条腿的猫」「丑橘喜提二手汽车」，宠物是轻松话题入口。</li>
-        <li><b>投资/财经 + 时事天气</b>：常刷「两天180W」「强对流橙色预警」类，兴趣杂食、生活感强。</li>
-        <li><b>画像校正</b>：从"游戏动漫党"升级为「FPS + 二次元 + 生活杂食（浏览偏好）」，话题入口更广；年龄/职业仍依约定留空（主页未自证）。</li>
-      </ul>
+      <details class="fold">
+        <summary>迭代历史（点击展开 · 低频备查）</summary>
+        <h3>迭代2 情报</h3>
+        <ul>
+          <li>该大哥有别的爱播，给团里每个人都刷，但整团只有本主播能"回"（接住、回应、有来有回）。</li>
+          <li>消费身份在团内"稀释"，护城河是<b>互动质量</b>而非消费独占。</li>
+        </ul>
+        <h3>迭代3 情报（本次截图）</h3>
+        <ul>
+          <li><b>爆发式消费</b>：入坑两天近万票，第一天 9000、第二天 700+，总贡献 9020 基本来自这两日。</li>
+          <li><b>PK 冲动型</b>：第一天守十轮、跟潇洒哥对打、砍千票；第二天只守主播一人。</li>
+          <li><b>颜值触发</b>：因为觉得主播好看而回关。</li>
+          <li><b>兴趣锚点</b>：爱打游戏、看动漫。</li>
+          <li><b>关系进展极快</b>：深夜长聊到凌晨 4 点，已有"看海约定"，话题进入生活细节。</li>
+          <li><b>主播已主动划边界</b>：「弟弟是直男，有空白天」——拒绝关系升级，保持边界。</li>
+        </ul>
+        <h3>迭代4 情报（抖音公开主页观察 · 均为其浏览/推荐内容，非本人发布）</h3>
+        <ul>
+          <li><b>抖音互相关注</b>：香克斯在抖音也关注了主播，且主播已回关；他在抖音与直播两端都 connect 你（此为账号关系，独立于浏览内容）。</li>
+          <li><b>常刷 FPS 游戏内容</b>：主页浏览流以突击位战绩类（「一突全场第一」）为主，说明对 FPS 感兴趣；结合深夜长聊互晒战绩，他确实也玩，可聊 Valorant/CS，但话题锚点用"你刷到的那个集锦"更稳。</li>
+          <li><b>二次元/动漫梗</b>：常刷动画/梗类，与"看动漫"吻合。</li>
+          <li><b>跨国恋/约会内容</b>：常刷「和斯拉夫女生约会」「网恋樱花妹七个月」类，反映偏好；可作谈资但勿当真、勿假定其本人经历。</li>
+          <li><b>宠物（猫）</b>：常刷「三条腿的猫」「丑橘喜提二手汽车」，宠物是轻松话题入口。</li>
+          <li><b>投资/财经 + 时事天气</b>：常刷「两天180W」「强对流橙色预警」类，兴趣杂食、生活感强。</li>
+          <li><b>画像校正</b>：从"游戏动漫党"升级为「FPS + 二次元 + 生活杂食（浏览偏好）」，话题入口更广；年龄/职业仍依约定留空（主页未自证）。</li>
+        </ul>
+      </details>
     </section>
 
     <section id="s5">
