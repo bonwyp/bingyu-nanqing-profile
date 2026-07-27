@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>团播拉新 + 留存 · AI 执行路径</title>
+<style>
+  :root{
+    --bg:#f7f5fb; --card:#ffffff; --ink:#2b2440; --muted:#7a7390;
+    --brand:#7c4dff; --brand2:#ff6fae; --gold:#f5a623; --mint:#27c2a0;
+    --line:#e7e1f2; --shadow:0 8px 30px rgba(80,40,160,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;padding:0 0 80px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  /* HERO */
+  .hero{background:linear-gradient(120deg,#7c4dff,#ff6fae);color:#fff;
+    padding:64px 22px 56px;text-align:center;border-radius:0 0 36px 36px}
+  .hero h1{font-size:34px;letter-spacing:1px;margin-bottom:14px}
+  .hero p{font-size:16px;opacity:.92;max-width:680px;margin:0 auto}
+  .tag{display:inline-block;background:rgba(255,255,255,.18);padding:6px 14px;
+    border-radius:20px;font-size:13px;margin-top:18px}
+  section{margin-top:54px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .sec-num{width:38px;height:38px;border-radius:12px;background:var(--brand);
+    color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+  .sec-head h2{font-size:23px}
+  .sec-head .sub{color:var(--muted);font-size:14px;margin-left:auto}
+  .card{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:26px}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .lead{font-size:17px;color:var(--ink);margin-bottom:6px}
+  .muted{color:var(--muted);font-size:14px}
+  .pill{display:inline-block;padding:4px 12px;border-radius:14px;font-size:13px;font-weight:600}
+  .p-brand{background:#efe9ff;color:var(--brand)}
+  .p-pink{background:#ffe9f3;color:var(--brand2)}
+  .p-gold{background:#fff3df;color:var(--gold)}
+  .p-mint{background:#e2f8f2;color:var(--mint)}
+  svg{display:block;width:100%;height:auto}
+  .cap{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+  .kpi{text-align:center;padding:18px 10px;border-radius:14px;background:#faf8ff}
+  .kpi .big{font-size:26px;font-weight:800;color:var(--brand)}
+  .kpi .lbl{font-size:13px;color:var(--muted);margin-top:4px}
+  .step{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:14px;
+    background:#fff;box-shadow:var(--shadow);margin-bottom:14px}
+  .step .n{flex:0 0 44px;height:44px;border-radius:12px;background:var(--brand);color:#fff;
+    font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .step h4{font-size:16px;margin-bottom:3px}
+  .step p{font-size:14px;color:var(--muted)}
+  .foot{text-align:center;color:var(--muted);font-size:13px;margin-top:60px;
+    border-top:1px solid var(--line);padding-top:24px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:14px;font-size:13px;color:var(--muted)}
+  .dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>团播拉新 + 留存 · AI 执行路径</h1>
+  <p>把"维护的直觉"变成"可复制的工具"，让已有付费用户留得住、新用户进得来。</p>
+  <div class="tag">面向管理者 · 一页看清整体打法</div>
+</div>
+
+<div class="wrap">
+
+  <!-- 1. 问题 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">1</div><h2>我们要解决什么</h2>
+      <div class="sub">问题 → 策略</div></div>
+    <div class="card grid g2">
+      <div>
+        <span class="pill p-pink">现状</span>
+        <p class="lead" style="margin-top:10px">已有付费用户，但留不住</p>
+        <p class="muted">不复打赏 · 不回看下一场 · 加团后不活跃</p>
+        <p class="lead" style="margin-top:16px">拉新全漏斗也掉量</p>
+        <p class="muted">曝光 → 进房 → 停留 → 关注 → 加团，每层都漏</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 360 220" role="img" aria-label="漏桶比喻">
+          <!-- 漏桶 -->
+          <path d="M70 40 L290 40 L270 170 L90 170 Z" fill="#efe9ff" stroke="#7c4dff" stroke-width="3"/>
+          <ellipse cx="180" cy="40" rx="110" ry="16" fill="#fff" stroke="#7c4dff" stroke-width="3"/>
+          <!-- 水流进 -->
+          <path d="M180 8 L180 36" stroke="#27c2a0" stroke-width="5" stroke-dasharray="4 5"/>
+          <text x="180" y="2" font-size="12" fill="#27c2a0" text-anchor="middle">拉新灌水</text>
+          <!-- 漏洞 -->
+          <circle cx="120" cy="120" r="7" fill="#ff6fae"/>
+          <circle cx="200" cy="100" r="6" fill="#ff6fae"/>
+          <circle cx="160" cy="150" r="5" fill="#ff6fae"/>
+          <text x="300" y="120" font-size="12" fill="#ff6fae">留存漏洞</text>
+          <text x="180" y="200" font-size="13" fill="#7a7390" text-anchor="middle">先堵漏，ROI 最高</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 核心认知 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">2</div><h2>核心认知：AI 是放大器，不是流量源</h2></div>
+    <div class="card" style="text-align:center;padding:34px">
+      <p style="font-size:20px;font-weight:700">AI 不替主播"聊感情"，也不直接"拉来人"</p>
+      <p class="muted" style="margin-top:8px;max-width:640px;margin-left:auto;margin-right:auto">
+        AI 把运营从重复、低杠杆的活里解放出来，让人专注做只有人能做好的事——真诚的双向互动、情绪价值共创。</p>
+      <div class="grid g3" style="margin-top:24px">
+        <div class="kpi"><div class="big">诊断</div><div class="lbl">AI 看清哪层漏</div></div>
+        <div class="kpi"><div class="big">生成</div><div class="lbl">AI 产素材库</div></div>
+        <div class="kpi"><div class="big">人闸</div><div class="lbl">人确认后发送</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 执行路径闭环 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">3</div><h2>整体执行路径（闭环）</h2>
+      <div class="sub">数据 → 诊断 → 生成 → 人闸 → 度量</div></div>
+    <div class="card">
+      <svg viewBox="0 0 920 280" role="img" aria-label="执行路径闭环">
+        <defs>
+          <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#7c4dff"/></marker>
+          <marker id="arb" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#ff6fae"/></marker>
+        </defs>
+        <!-- nodes -->
+        <g font-family="sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+          <rect x="20" y="90" width="160" height="74" rx="14" fill="#efe9ff" stroke="#7c4dff" stroke-width="2"/>
+          <text x="100" y="120" fill="#7c4dff">L1 数据层</text>
+          <text x="100" y="142" font-size="11" fill="#7a7390" font-weight="500">混合接入</text>
+
+          <rect x="210" y="90" width="160" height="74" rx="14" fill="#e2f8f2" stroke="#27c2a0" stroke-width="2"/>
+          <text x="290" y="120" fill="#1c9e83">L2 诊断层</text>
+          <text x="290" y="142" font-size="11" fill="#7a7390" font-weight="500">自动归因</text>
+
+          <rect x="400" y="90" width="160" height="74" rx="14" fill="#fff3df" stroke="#f5a623" stroke-width="2"/>
+          <text x="480" y="120" fill="#c97e0a">L3 生成层</text>
+          <text x="480" y="142" font-size="11" fill="#7a7390" font-weight="500">产素材库</text>
+
+          <rect x="590" y="90" width="160" height="74" rx="14" fill="#ffe9f3" stroke="#ff6fae" stroke-width="2"/>
+          <text x="670" y="120" fill="#d63f86">L4 人闸层</text>
+          <text x="670" y="142" font-size="11" fill="#7a7390" font-weight="500">人确认发送</text>
+
+          <rect x="780" y="90" width="120" height="74" rx="14" fill="#efe9ff" stroke="#7c4dff" stroke-width="2"/>
+          <text x="840" y="120" fill="#7c4dff">L5 度量</text>
+          <text x="840" y="142" font-size="11" fill="#7a7390" font-weight="500">回采指标</text>
+        </g>
+        <!-- arrows -->
+        <line x1="180" y1="127" x2="208" y2="127" stroke="#7c4dff" stroke-width="3" marker-end="url(#ar)"/>
+        <line x1="370" y1="127" x2="398" y2="127" stroke="#27c2a0" stroke-width="3" marker-end="url(#ar)"/>
+        <line x1="560" y1="127" x2="588" y2="127" stroke="#f5a623" stroke-width="3" marker-end="url(#ar)"/>
+        <line x1="750" y1="127" x2="778" y2="127" stroke="#ff6fae" stroke-width="3" marker-end="url(#ar)"/>
+        <!-- 回流 -->
+        <path d="M840 90 C 840 30, 100 30, 100 88" fill="none" stroke="#ff6fae" stroke-width="3" stroke-dasharray="6 6" marker-end="url(#arb)"/>
+        <text x="460" y="36" font-size="12" fill="#d63f86" text-anchor="middle">迭代：指标回灌诊断与生成</text>
+      </svg>
+      <div class="legend">
+        <span><span class="dot" style="background:#7c4dff"></span>全自动</span>
+        <span><span class="dot" style="background:#ff6fae"></span>需人确认</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 三层赋能 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">4</div><h2>三层赋能：把直觉变成工具</h2>
+      <div class="sub">悟性定上限，工具保下限</div></div>
+    <div class="card">
+      <svg viewBox="0 0 920 300" role="img" aria-label="三层赋能塔">
+        <!-- 顶层 真人 -->
+        <polygon points="460,20 560,90 360,90" fill="#ff6fae"/>
+        <text x="460" y="68" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">顶层 · 真人共创</text>
+        <text x="460" y="110" font-size="12" fill="#d63f86" text-anchor="middle">被认真对待 / 情绪价值共创 — AI 不碰</text>
+        <!-- 进阶层 -->
+        <rect x="270" y="130" width="380" height="66" rx="12" fill="#fff3df" stroke="#f5a623" stroke-width="2"/>
+        <text x="460" y="158" font-size="14" fill="#c97e0a" text-anchor="middle" font-weight="700">进阶层 · AI 外挂</text>
+        <text x="460" y="180" font-size="12" fill="#7a7390" text-anchor="middle">观众记忆库 + 风险雷达 + 复盘教练（人主导）</text>
+        <!-- 基础层 -->
+        <rect x="150" y="210" width="620" height="72" rx="12" fill="#efe9ff" stroke="#7c4dff" stroke-width="2"/>
+        <text x="460" y="238" font-size="14" fill="#7c4dff" text-anchor="middle" font-weight="700">基础层 · 量化工具（管理者抓手）</text>
+        <text x="460" y="262" font-size="12" fill="#7a7390" text-anchor="middle">话术库 + 维护逻辑 + 维护判断指标 → 不会的人也能上手</text>
+      </svg>
+      <p class="muted" style="margin-top:14px;text-align:center">
+        客户反馈"维护教不会"——根因是过去只靠口头教/人带人。把定性直觉量化成工具，基础层即可复制、可考核。</p>
+    </div>
+  </section>
+
+  <!-- 5. 情绪价值模型 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">5</div><h2>决策大脑：情绪价值模型</h2>
+      <div class="sub">所有动作都套它，避免反方向</div></div>
+    <div class="card grid g2">
+      <div style="display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 340 280" role="img" aria-label="情绪价值金字塔">
+          <polygon points="170,20 300,250 40,250" fill="#efe9ff" stroke="#7c4dff" stroke-width="2"/>
+          <!-- 分层线 -->
+          <line x1="80" y1="175" x2="260" y2="175" stroke="#7c4dff" stroke-width="1.5"/>
+          <line x1="110" y1="110" x2="230" y2="110" stroke="#7c4dff" stroke-width="1.5"/>
+          <line x1="140" y1="58" x2="200" y2="58" stroke="#7c4dff" stroke-width="1.5"/>
+          <text x="170" y="44" font-size="13" fill="#7c4dff" text-anchor="middle" font-weight="700">被认真对待</text>
+          <text x="170" y="92" font-size="13" fill="#7c4dff" text-anchor="middle" font-weight="700">被期待 · 被偏爱</text>
+          <text x="170" y="150" font-size="13" fill="#7c4dff" text-anchor="middle" font-weight="700">被回应 · 被记住</text>
+          <text x="170" y="220" font-size="13" fill="#7c4dff" text-anchor="middle" font-weight="700">被看见 · 被联接</text>
+        </svg>
+      </div>
+      <div>
+        <p class="lead">情绪价值 = 身份 × 互动质量</p>
+        <p class="muted" style="margin:8px 0 16px">身份阶梯：被看见 → 被记住 → 被期待。<br>互动四级：模板 → 有效 → 深度 → 认真。</p>
+        <span class="pill p-pink">流失主因</span>
+        <p class="muted" style="margin-top:10px">边际效用递减 → 收益率崩塌，是付费用户离开的根本。<br>留存关键动作：工业糖（模板）→ 定制糖（共同记忆）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 维护判断指标 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">6</div><h2>管理者抓手：维护判断指标</h2>
+      <div class="sub">把"感知"变成"可看的数字"</div></div>
+    <div class="card grid g3">
+      <div class="kpi"><div class="big">回访率</div><div class="lbl">付费用户回看下一场比例</div></div>
+      <div class="kpi"><div class="big">复打赏率</div><div class="lbl">再次上票的用户占比</div></div>
+      <div class="kpi"><div class="big">加团活跃</div><div class="lbl">近30天发言/互动人数</div></div>
+      <div class="kpi"><div class="big">记忆点</div><div class="lbl">主播能说出用户几个特征</div></div>
+      <div class="kpi"><div class="big">互动等级</div><div class="lbl">模板/有效/深度/认真 占比</div></div>
+      <div class="kpi"><div class="big">边界合规</div><div class="lbl">有无越界承诺</div></div>
+    </div>
+    <p class="muted" style="margin-top:14px;text-align:center">指标一出来，维护从"玄学"变"可管理、可考核"。</p>
+  </section>
+
+  <!-- 7. 落地路线图 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">7</div><h2>落地路线图</h2>
+      <div class="sub">四步跑通</div></div>
+    <div class="step"><div class="n">1</div><div>
+      <h4>诊断基线</h4><p>接入数据（MCP 或导出），AI 自动生成留存/拉新漏斗，标红最痛层。产出：现状看板。</p></div></div>
+    <div class="step"><div class="n">2</div><div>
+      <h4>基础量化工具</h4><p>落地话术库 + 维护逻辑 + 维护判断指标，给管理者抓手、给主播基础基线。产出：工具包。</p></div></div>
+    <div class="step"><div class="n">3</div><div>
+      <h4>进阶 AI 外挂</h4><p>上线观众记忆库、风险雷达、复盘教练，让有悟性的人飞更高。产出：外挂面板。</p></div></div>
+    <div class="step"><div class="n">4</div><div>
+      <h4>度量迭代</h4><p>回采指标比对实验阈值，AI 自动迭代诊断与生成。产出：增长闭环。</p></div></div>
+  </section>
+
+  <!-- 8. 客户要提供 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">8</div><h2>需要您提供</h2>
+      <div class="sub">数据燃料</div></div>
+    <div class="card grid g2">
+      <div><span class="pill p-brand">必须</span>
+        <p class="muted" style="margin-top:10px">· 后台逐场数据（场观/新增/加团/停留/进入率）<br>· 付费用户明细 + 回访率 + 粉丝团数据<br>· 对标账号 1–3 个</p></div>
+      <div><span class="pill p-gold">最好有</span>
+        <p class="muted" style="margin-top:10px">· 投流现状（千川/随心推、预算、目标）<br>· 量化目标（可接受 CAC）<br>· 蝉妈妈/飞瓜/巨量算数权限（决定自动取数）</p></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    团播增长方案 · 交付版 ｜ 基于本地团播情绪价值模型（Vol.042–046 + 实操 6–9 篇）<br>
+    内部技术细节见配套 SKILL.md，本页仅供管理者决策与执行对齐。
+  </div>
+
+</div>
+</body>
+</html>
