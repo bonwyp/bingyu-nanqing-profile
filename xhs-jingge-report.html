@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小红书博主深度研究报告 · 井哥</title>
+<style>
+  :root{
+    --bg:#f5f6fa; --card:#ffffff; --ink:#1f2430; --sub:#6b7385;
+    --line:#e7e9f0; --accent:#ff2e4d; --accent2:#ff7a8a; --blue:#4b7bec;
+    --green:#20bf6b; --gold:#f7b731; --purple:#a55eea; --teal:#26c6da;
+    --shadow:0 2px 12px rgba(31,36,48,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  .wrap{display:flex;min-height:100vh}
+  /* side nav */
+  nav{width:200px;flex:none;background:#1f2430;color:#cfd3e0;position:sticky;top:0;height:100vh;overflow:auto;padding:22px 14px}
+  nav h1{font-size:15px;color:#fff;margin-bottom:4px;line-height:1.3}
+  nav .tag{font-size:11px;color:#8a90a6;margin-bottom:18px}
+  nav a{display:block;color:#aeb4c6;text-decoration:none;font-size:13px;padding:8px 10px;border-radius:8px;margin-bottom:2px}
+  nav a:hover{background:#2c3242;color:#fff}
+  main{flex:1;padding:34px 40px;max-width:1080px;margin:0 auto}
+  .hero{background:linear-gradient(120deg,#ff2e4d,#ff7a8a);color:#fff;border-radius:18px;padding:30px 34px;box-shadow:var(--shadow);margin-bottom:26px}
+  .hero h2{font-size:26px;margin-bottom:6px}
+  .hero p{opacity:.92;font-size:14px}
+  .hero .one{margin-top:14px;font-size:15px;background:rgba(255,255,255,.15);display:inline-block;padding:8px 14px;border-radius:10px}
+  section{margin-bottom:34px}
+  .sec-title{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;margin-bottom:16px}
+  .sec-title .n{width:28px;height:28px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;flex:none}
+  .sec-title .sub{font-size:12px;color:var(--sub);font-weight:400}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+  .kpi{text-align:center}
+  .kpi .v{font-size:26px;font-weight:800;color:var(--accent)}
+  .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+  .chart-title{font-size:14px;font-weight:700;margin-bottom:10px}
+  .note{font-size:12px;color:var(--sub);margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+  th{color:var(--sub);font-weight:600;font-size:12px}
+  td.big{font-weight:700}
+  .pill{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
+  .pill.up{background:#ffe9ec;color:var(--accent)}
+  .pill.down{background:#e9f9f0;color:var(--green)}
+  .pill.mid{background:#fff4d9;color:#b8860b}
+  ul{margin-left:18px;font-size:13px}
+  li{margin-bottom:6px}
+  .callout{background:#fff7f8;border-left:4px solid var(--accent);padding:12px 14px;border-radius:0 10px 10px 0;font-size:13px;margin-top:12px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--sub);margin-top:8px}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  .timeline-row{display:flex;align-items:center;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px dashed var(--line)}
+  .timeline-row .d{width:78px;color:var(--sub);flex:none}
+  .timeline-row .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .timeline-row .v{font-weight:700;color:var(--accent);width:64px;text-align:right;flex:none}
+  .badge{background:var(--accent);color:#fff;border-radius:6px;padding:1px 6px;font-size:11px;margin-left:6px}
+  .foot{text-align:center;color:var(--sub);font-size:12px;padding:20px}
+  .svgbox{width:100%}
+  @media(max-width:880px){nav{display:none}.g2,.g3,.g4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <h1>井哥 · 深度研究报告</h1>
+  <div class="tag">小红书博主 · 100 篇笔记 · ~10 个月</div>
+  <a href="#overview">核心数据速览</a>
+  <a href="#profile">博主画像</a>
+  <a href="#content">内容结构</a>
+  <a href="#interaction">互动归因</a>
+  <a href="#growth">成长轨迹</a>
+  <a href="#tags">标签与 SEO</a>
+  <a href="#biz">商业化</a>
+  <a href="#compete">竞争定位</a>
+  <a href="#strategy">策略建议</a>
+</nav>
+
+<main>
+  <div class="hero">
+    <h2>小红书博主深度研究报告 · 井哥</h2>
+    <p>一份基于 100 篇笔记元数据的多维拆解 · 数据驱动 · 爆款驱动型账号画像</p>
+    <div class="one">一句话定位：围绕「话题 · 穿搭 · 感觉至」与「物分 · 50kg · 物分享」双内容线的穿搭分享型创作者</div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="sec-title"><span class="n">★</span>核心数据速览 <span class="sub">Overview</span></div>
+    <div class="grid g4">
+      <div class="card kpi"><div class="v">100</div><div class="l">大盘笔记总数</div></div>
+      <div class="card kpi"><div class="v">1140</div><div class="l">平均点赞 (Mean)</div></div>
+      <div class="card kpi"><div class="v">352</div><div class="l">中位数 (Median)</div></div>
+      <div class="card kpi"><div class="v">20,000</div><div class="l">最高赞 (Max)</div></div>
+      <div class="card kpi"><div class="v">10 个月</div><div class="l">创作周期</div></div>
+      <div class="card kpi"><div class="v">77 / 23</div><div class="l">图文 / 视频 篇数</div></div>
+      <div class="card kpi"><div class="v">2459</div><div class="l">标准差 (波动极大)</div></div>
+      <div class="card kpi"><div class="v">12 篇</div><div class="l">爆款 (>2×均赞)</div></div>
+    </div>
+    <div class="callout">📌 该账号典型 <b>爆款驱动型</b>：均值 1140 远高于中位数 352，标准差 2459 说明互动高度集中在少数笔记。成功关键不是篇篇爆款，而是持续产出"可能爆款"的内容。</div>
+  </section>
+
+  <!-- PROFILE -->
+  <section id="profile">
+    <div class="sec-title"><span class="n">00</span>博主画像卡片 <span class="sub">Profile</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">基础信息看板</div>
+        <table>
+          <tr><th>字段</th><th>内容</th></tr>
+          <tr><td>昵称</td><td class="big">井哥</td></tr>
+          <tr><td>内容总量</td><td>100 篇</td></tr>
+          <tr><td>视频占比</td><td>23 (23.0%)</td></tr>
+          <tr><td>创作周期</td><td>~10 个月</td></tr>
+          <tr><td>均赞 / 中位数</td><td>1140.0 / 352.0</td></tr>
+          <tr><td>最高赞</td><td>20,000</td></tr>
+          <tr><td>标准差</td><td>2459.2（爆款驱动）</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="chart-title">人设要素矩阵</div>
+        <table>
+          <tr><th>要素</th><th>表现</th></tr>
+          <tr><td>语言风格</td><td>理性客观、信息密度高</td></tr>
+          <tr><td>差异化定位</td><td>双内容线：话题·穿搭·感觉至 / 物分·50kg·物分享</td></tr>
+          <tr><td>人格化标签</td><td>井哥</td></tr>
+          <tr><td>定位确定性</td><td><span class="pill mid">Indicative</span> 基于元数据推断</td></tr>
+        </table>
+        <div class="note">⚠️ 用户画像痛点 / 消费场景：当前缺少评论与正文数据，暂不推断，避免误判。</div>
+      </div>
+    </div>
+    <div class="callout">🎯 <b>标题特征信号</b>：Emoji 结尾使用率 51.0%，但均赞仅 903.6，<b>低于均值 20.7%</b> —— 这是一个值得注意的负向模式（详见策略章节）。</div>
+  </section>
+
+  <!-- CONTENT -->
+  <section id="content">
+    <div class="sec-title"><span class="n">01</span>内容结构分析 <span class="sub">Content</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">主题分布 · 篇数占比</div>
+        <div id="themePie" class="svgbox"></div>
+        <div class="legend">
+          <span><i style="background:#ff2e4d"></i>话题·穿搭·感觉至 17%</span>
+          <span><i style="background:#f7b731"></i>物分·50kg·物分享 6%</span>
+          <span><i style="background:#c2c8d6"></i>未归类 49%</span>
+          <span><i style="background:#9aa3b8"></i>日常随手 28%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="chart-title">各主题平均点赞对比</div>
+        <div id="themeBar" class="svgbox"></div>
+        <div class="note">红/金两线均赞显著高于整体均值（1140），是拉升账号表现的核心杠杆。</div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <div class="chart-title">内容形态效率对比</div>
+        <div id="formatBar" class="svgbox"></div>
+        <div class="note">视频均赞 2075.6 ≈ 图文（860.5）的 <b>241%</b> 效率，建议持续做视频。</div>
+      </div>
+      <div class="card">
+        <div class="chart-title">内容密度</div>
+        <div class="grid g3" style="margin-top:6px">
+          <div class="card kpi" style="box-shadow:none"><div class="v">10</div><div class="l">活跃月数</div></div>
+          <div class="card kpi" style="box-shadow:none"><div class="v">10.0</div><div class="l">月均发布</div></div>
+          <div class="card kpi" style="box-shadow:none"><div class="v">2.5</div><div class="l">周均发布</div></div>
+        </div>
+        <div class="note" style="margin-top:14px">系列化内容：「分享」系列 9 篇（如 🍨购物分享｜167 50kg），有助于形成用户预期与长尾流量。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTION -->
+  <section id="interaction">
+    <div class="sec-title"><span class="n">03</span>互动归因分析 <span class="sub">Interaction</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">点赞累计贡献（帕累托）</div>
+        <div id="pareto" class="svgbox"></div>
+        <div class="note">前 29% 笔记贡献 80% 点赞；前 5 篇即占 41.9% —— 极端头部集中。</div>
+      </div>
+      <div class="card">
+        <div class="chart-title">互动集中度指数</div>
+        <div id="concBar" class="svgbox"></div>
+        <div class="note">底部 50% 笔记仅贡献 <b>12.0%</b> 点赞，印证"长尾很弱"。</div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <div class="chart-title">爆款 Top20 vs 普通 Bottom20</div>
+        <div id="vsBar" class="svgbox"></div>
+        <div class="note">爆款均赞 4187 vs 普通 224，差异 <b>18.7×</b>；正文长度 2.2× —— 深度内容更易引爆。</div>
+      </div>
+      <div class="card">
+        <div class="chart-title">互动分布全景</div>
+        <table>
+          <tr><th>指标</th><th>数值</th></tr>
+          <tr><td>总互动量</td><td class="big">113,996</td></tr>
+          <tr><td>平均 / 中位数</td><td>1140.0 / 352.0</td></tr>
+          <tr><td>标准差</td><td>2459.2</td></tr>
+          <tr><td>P75 / P25</td><td>783.0 / 272.8</td></tr>
+          <tr><td>最高 / 最低</td><td>20,000 / 161</td></tr>
+        </table>
+        <div class="note">⚠️ 仅有点赞/标题/时间数据，未对爆款原因确定排序、不推断评论动机。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROWTH -->
+  <section id="growth">
+    <div class="sec-title"><span class="n">04</span>成长轨迹分析 <span class="sub">Growth</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">12 篇爆款点赞走势（2025-01 → 2026-07）</div>
+        <div id="growthLine" class="svgbox"></div>
+        <div class="note">虚线为均值 1140。受众规模随时间扩大，但爆款节奏尚不稳定。</div>
+      </div>
+      <div class="card">
+        <div class="chart-title">关键转折点编年史（Top 爆款）</div>
+        <div id="growthList"></div>
+      </div>
+    </div>
+    <div class="grid g4" style="margin-top:16px">
+      <div class="card kpi" style="box-shadow:none"><div class="v">冷启动</div><div class="l">2025-01 首月即出 2万赞爆款</div></div>
+      <div class="card kpi" style="box-shadow:none"><div class="v">定位确立</div><div class="l">~2025-01 方向聚焦</div></div>
+      <div class="card kpi" style="box-shadow:none"><div class="v">增长爆发</div><div class="l">结构稳定、均赞提升</div></div>
+      <div class="card kpi" style="box-shadow:none"><div class="v">成熟运营</div><div class="l">2026-06~ 增长放缓待破局</div></div>
+    </div>
+  </section>
+
+  <!-- TAGS -->
+  <section id="tags">
+    <div class="sec-title"><span class="n">05</span>标签与 SEO 分析 <span class="sub">Tags</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">高频标签 TOP 20</div>
+        <div id="tagBar" class="svgbox"></div>
+      </div>
+      <div class="card">
+        <div class="chart-title">标签策略</div>
+        <div class="callout" style="margin-top:0">核心固定组合（每篇保持 5 个）：</div>
+        <div style="font-size:13px;margin:10px 0;line-height:2">
+          <span class="pill up">#感觉至上</span>
+          <span class="pill up">#fyp</span>
+          <span class="pill up">#ootd</span>
+          <span class="pill up">#穿搭暗号对一下</span>
+          <span class="pill up">#本命穿搭</span>
+        </div>
+        <ul>
+          <li>唯一标签总数 <b>78</b> 个，总引用 103 次</li>
+          <li>每篇再增加 <b>2–3 个场景/长尾标签</b>匹配搜索意图</li>
+          <li>避免使用事件限定标签（如活动名），搜索量极低</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIZ -->
+  <section id="biz">
+    <div class="sec-title"><span class="n">06</span>商业化分析 <span class="sub">Business</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">商业化信号检测</div>
+        <div class="kpi" style="padding:24px 0"><div class="v">0 篇</div><div class="l">检测到的商业内容</div></div>
+        <div class="note">自然内容均赞 1140.0 为基准。标题/元数据中未检测到明确商单信号。</div>
+      </div>
+      <div class="card">
+        <div class="chart-title">说明</div>
+        <div class="callout" style="margin-top:0">⚠️ 缺少正文、评论、置顶链接与商品组件数据，<b>不判断真实商业化阶段</b>，也不评估商业内容表现。建议有商业样本后再评估变现路径。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETE -->
+  <section id="compete">
+    <div class="sec-title"><span class="n">07</span>竞争定位分析 <span class="sub">Competition · 单博主版</span></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-title">账号特征总览</div>
+        <table>
+          <tr><th>维度</th><th>数据</th></tr>
+          <tr><td>内容总量</td><td>100 篇</td></tr>
+          <tr><td>图文 / 视频</td><td>77 / 23</td></tr>
+          <tr><td>均赞</td><td>1140.0</td></tr>
+          <tr><td>创作周期</td><td>~10 个月</td></tr>
+          <tr><td>内容集中度</td><td>Top 29% 占 80% 点赞</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="chart-title">综合评估</div>
+        <div class="callout" style="margin-top:0">🧭 单账号数据不足以判断可复制性与象限定位。<b>建议补充 3–5 个同赛道账号</b>后再做完整竞争定位分析。</div>
+        <div class="note" style="margin-top:10px">差异化来源：双内容线（话题·穿搭·感觉至 / 物分·50kg·物分享）的内容定位。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section id="strategy">
+    <div class="sec-title"><span class="n">08</span>策略建议与行动计划 <span class="sub">Strategy</span></div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="chart-title">核心发现 Top 3</div>
+        <ol style="margin-left:18px;font-size:13px">
+          <li style="margin-bottom:8px">主题分类可信度不足，暂不输出"最佳主题"结论</li>
+          <li style="margin-bottom:8px"><b>Emoji 结尾</b> -20.7%，建议减少使用</li>
+          <li>Top 29% 笔记占 80% 点赞，爆款驱动型</li>
+        </ol>
+      </div>
+      <div class="card">
+        <div class="chart-title">内容 / 标题策略</div>
+        <ul style="font-size:13px">
+          <li>视频效率 241%，持续做视频</li>
+          <li>固定 5 核心标签 + 2–3 场景标签</li>
+          <li>避免纯事件性 / 过垂直标题</li>
+          <li>推荐节奏：每周 3–4 篇</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="chart-title">关键指标看板</div>
+        <table>
+          <tr><th>指标</th><th>当前</th></tr>
+          <tr><td>均赞</td><td class="big">1140.0</td></tr>
+          <tr><td>爆款率</td><td>12.0%</td></tr>
+          <tr><td>中位数</td><td>352.0</td></tr>
+          <tr><td>月发布</td><td>~10.0</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card">
+        <div class="chart-title">短期（本周）</div>
+        <ul style="font-size:13px">
+          <li>复盘 Top 10 高赞标题</li>
+          <li>检查标签组合</li>
+          <li>补采正文/标签数据</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="chart-title">中期（本月）</div>
+        <ul style="font-size:13px">
+          <li>3–5 篇验证一个方向</li>
+          <li>对比中位数/爆款率</li>
+          <li>优化分类词典</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="chart-title">长期（本季度）</div>
+        <ul style="font-size:13px">
+          <li>建立内容日历</li>
+          <li>测 1–2 个新形式</li>
+          <li>补 3–5 同赛道账号</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">💡 <b>可信度分级</b>：[Confirmed] 30+ 样本量化结论 · [Indicative] 10–30 样本趋势 · [Speculative] 有限样本推断。本报告多数结论属 Indicative，需实操动态验证。</div>
+  </section>
+
+  <div class="foot">数据来源：xhs-report-1.zip · 100 篇笔记元数据 · 生成于可视化报告</div>
+</main>
+</div>
+
+<script>
+/* ---------- 通用 SVG 画图工具 ---------- */
+const NS="http://www.w3.org/2000/svg";
+function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+
+/* 横向条形图 */
+function hBar(id, items, opt={}){
+  const w=opt.w||440, labelW=opt.labelW||150, barMax=w-labelW-70, rowH=opt.rowH||30;
+  const max=Math.max(...items.map(i=>i.v));
+  const h=items.length*rowH+10;
+  const svg=el("svg",{viewBox:`0 0 ${w} ${h}`,width:"100%"});
+  items.forEach((it,i)=>{
+    const y=i*rowH+6, bw=Math.max(2,barMax*it.v/max);
+    const t=el("text",{x:0,y:y+14,"font-size":12,fill:"#1f2430"});t.textContent=it.l;svg.appendChild(t);
+    const r=el("rect",{x:labelW,y:y,width:bw,height:18,rx:4,fill:it.c||"#ff2e4d"});svg.appendChild(r);
+    const vt=el("text",{x:labelW+bw+6,y:y+14,"font-size":12,fill:"#6b7385"});vt.textContent=it.v+(it.u||"");svg.appendChild(vt);
+  });
+  document.getElementById(id).appendChild(svg);
+}
+
+/* 纵向条形图 */
+function vBar(id, items, opt={}){
+  const w=opt.w||440, h=opt.h||220, padL=40, padB=46, padT=14, padR=10;
+  const max=Math.max(...items.map(i=>i.v))*1.15;
+  const svg=el("svg",{viewBox:`0 0 ${w} ${h}`,width:"100%"});
+  const plotW=w-padL-padR, plotH=h-padT-padB, baseY=h-padB;
+  // y grid
+  for(let g=0;g<=4;g++){
+    const gy=padT+plotH*(1-g/4);
+    svg.appendChild(el("line",{x1:padL,y1:gy,x2:w-padR,y2:gy,stroke:"#eef0f5"}));
+    const tl=el("text",{x:padL-6,y:gy+4,"font-size":10,fill:"#9aa3b8","text-anchor":"end"});tl.textContent=Math.round(max*g/4);svg.appendChild(tl);
+  }
+  const bw=plotW/items.length*0.55;
+  items.forEach((it,i)=>{
+    const x=padL+plotW*(i+0.5)/items.length;
+    const bh=plotH*it.v/max;
+    svg.appendChild(el("rect",{x:x-bw/2,y:baseY-bh,width:bw,height:bh,rx:5,fill:it.c||"#ff2e4d"}));
+    const vt=el("text",{x:x,y:baseY-bh-5,"font-size":11,fill:"#1f2430","text-anchor":"middle","font-weight":700});vt.textContent=it.v;svg.appendChild(vt);
+    const lt=el("text",{x:x,y:baseY+14,"font-size":10,fill:"#6b7385","text-anchor":"middle"});lt.textContent=it.l;svg.appendChild(lt);
+  });
+  document.getElementById(id).appendChild(svg);
+}
+
+/* 甜甜圈 */
+function donut(id,items){
+  const size=180,c=90,r=66,circ=2*Math.PI*r;let off=0;
+  const svg=el("svg",{viewBox:`0 0 ${size} ${size}`,width:160,height:160});
+  svg.appendChild(el("circle",{cx:c,cy:c,r:r,fill:"none",stroke:"#eef0f5","stroke-width":26}));
+  const total=items.reduce((s,d)=>s+d.v,0);
+  items.forEach(d=>{
+    const len=circ*d.v/total;
+    svg.appendChild(el("circle",{cx:c,cy:c,r:r,fill:"none",stroke:d.c,"stroke-width":26,
+      "stroke-dasharray":`${len} ${circ-len}`,"stroke-dashoffset":-off,transform:`rotate(-90 ${c} ${c})`}));
+    off+=len;
+  });
+  const t1=el("text",{x:c,y:c-4,"font-size":20,fill:"#1f2430","text-anchor":"middle","font-weight":800});t1.textContent=total;
+  const t2=el("text",{x:c,y:c+14,"font-size":10,fill:"#6b7385","text-anchor":"middle"});t2.textContent="篇笔记";
+  svg.appendChild(t1);svg.appendChild(t2);
+  document.getElementById(id).appendChild(svg);
+}
+
+/* 帕累托阶梯（累计曲线） */
+function pareto(id,pts){
+  const w=440,h=220,padL=40,padB=40,padT=14,padR=14;
+  const svg=el("svg",{viewBox:`0 0 ${w} ${h}`,width:"100%"});
+  const plotW=w-padL-padR,plotH=h-padT-padB,baseY=h-padB;
+  const xmax=Math.max(...pts.map(p=>p.x)),ymax=100;
+  // grid
+  for(let g=0;g<=4;g++){
+    const gy=padT+plotH*(1-g/4);
+    svg.appendChild(el("line",{x1:padL,y1:gy,x2:w-padR,y2:gy,stroke:"#eef0f5"}));
+    const tl=el("text",{x:padL-6,y:gy+4,"font-size":10,fill:"#9aa3b8","text-anchor":"end"});tl.textContent=(ymax*g/4)+"%";svg.appendChild(tl);
+  }
+  const X=x=>padL+plotW*x/xmax, Y=y=>padT+plotH*(1-y/ymax);
+  let d="M "+X(pts[0].x)+" "+Y(pts[0].y);
+  pts.forEach((p,i)=>{if(i>0)d+=" L "+X(p.x)+" "+Y(p.y);});
+  svg.appendChild(el("path",{d:d,fill:"none",stroke:"#ff2e4d","stroke-width":2.5}));
+  pts.forEach(p=>{
+    svg.appendChild(el("circle",{cx:X(p.x),cy:Y(p.y),r:4,fill:"#ff2e4d"}));
+    const t=el("text",{x:X(p.x),y:Y(p.y)-8,"font-size":10,fill:"#1f2430","text-anchor":"middle","font-weight":700});t.textContent=p.y+"%";svg.appendChild(t);
+    const xl=el("text",{x:X(p.x),y:baseY+14,"font-size":9,fill:"#9aa3b8","text-anchor":"middle"});xl.textContent=p.l;svg.appendChild(xl);
+  });
+  document.getElementById(id).appendChild(svg);
+}
+
+/* 成长走势（散点+均值线） */
+function growthLine(id,pts,mean){
+  const w=440,h=240,padL=44,padB=30,padT=14,padR=14;
+  const svg=el("svg",{viewBox:`0 0 ${w} ${h}`,width:"100%"});
+  const plotW=w-padL-padR,plotH=h-padT-padB,baseY=h-padB;
+  const t0=pts[0].t, t1=pts[pts.length-1].t, span=t1-t0;
+  const ymax=Math.max(...pts.map(p=>p.v))*1.1;
+  for(let g=0;g<=4;g++){
+    const gy=padT+plotH*(1-g/4);
+    svg.appendChild(el("line",{x1:padL,y1:gy,x2:w-padR,y2:gy,stroke:"#eef0f5"}));
+    const tl=el("text",{x:padL-6,y:gy+4,"font-size":10,fill:"#9aa3b8","text-anchor":"end"});tl.textContent=Math.round(ymax*g/4);svg.appendChild(tl);
+  }
+  const X=t=>padL+plotW*(t-t0)/span, Y=v=>padT+plotH*(1-v/ymax);
+  // mean line
+  svg.appendChild(el("line",{x1:padL,y1:Y(mean),x2:w-padR,y2:Y(mean),stroke:"#9aa3b8","stroke-dasharray":"5 4","stroke-width":1.5}));
+  const ml=el("text",{x:w-padR,y:Y(mean)-5,"font-size":10,fill:"#9aa3b8","text-anchor":"end"});ml.textContent="均值 "+mean;svg.appendChild(ml);
+  // line
+  let d="M "+X(pts[0].t)+" "+Y(pts[0].v);
+  pts.forEach(p=>{d+=" L "+X(p.t)+" "+Y(p.v);});
+  svg.appendChild(el("path",{d:d,fill:"none",stroke:"#ff7a8a","stroke-width":2}));
+  pts.forEach(p=>{
+    svg.appendChild(el("circle",{cx:X(p.t),cy:Y(p.v),r:4.5,fill:"#ff2e4d"}));
+  });
+  // x labels
+  [t0,t1].forEach(t=>{const xl=el("text",{x:X(t),y:baseY+16,"font-size":9,fill:"#9aa3b8","text-anchor":"middle"});xl.textContent=fmt(t);svg.appendChild(xl);});
+  document.getElementById(id).appendChild(svg);
+}
+function fmt(t){const d=new Date(t);return (d.getMonth()+1)+"/"+d.getDate()+"/"+String(d.getFullYear()).slice(2);}
+
+/* ---------- 数据 ---------- */
+// 主题分布
+donut("themePie",[
+  {l:"话题·穿搭·感觉至",v:17,c:"#ff2e4d"},
+  {l:"物分·50kg·物分享",v:6,c:"#f7b731"},
+  {l:"未归类",v:49,c:"#c2c8d6"},
+  {l:"日常随手",v:28,c:"#9aa3b8"}
+]);
+hBar("themeBar",[
+  {l:"话题·穿搭·感觉至",v:2994.3,c:"#ff2e4d"},
+  {l:"物分·50kg·物分享",v:1610.5,c:"#f7b731"},
+  {l:"未归类观察",v:822.6,c:"#c2c8d6"},
+  {l:"日常随手记录",v:468.6,c:"#9aa3b8"}
+],{labelW:140});
+// 形态效率
+vBar("formatBar",[
+  {l:"图文 77篇",v:860.5,c:"#9aa3b8"},
+  {l:"视频 23篇",v:2075.6,c:"#ff2e4d"}
+],{h:220});
+// 帕累托
+pareto("pareto",[
+  {l:"Top5",x:5,y:41.9},
+  {l:"Top10%",x:10,y:59.9},
+  {l:"Top20%",x:20,y:73.5}
+]);
+// 集中度
+hBar("concBar",[
+  {l:"头部 Top5 篇",v:41.9,c:"#ff2e4d",u:"%"},
+  {l:"Top10% 笔记",v:59.9,c:"#ff7a8a",u:"%"},
+  {l:"Top20% 笔记",v:73.5,c:"#f7b731",u:"%"},
+  {l:"底部50% 笔记",v:12.0,c:"#9aa3b8",u:"%"}
+],{labelW:130});
+// 爆款 vs 普通
+vBar("vsBar",[
+  {l:"爆款均赞",v:4187.1,c:"#ff2e4d"},
+  {l:"普通均赞",v:224.4,c:"#9aa3b8"},
+  {l:"爆款正文(字)",v:53,c:"#f7b731"},
+  {l:"普通正文(字)",v:24,c:"#c2c8d6"}
+],{h:220});
+// 标签 TOP20
+const tags=[
+  ["感觉至上",7],["fyp",4],["ootd",4],["穿搭暗号对一下",3],["本命穿搭",3],
+  ["购物分享",3],["开箱",3],["新衣试穿",3],["夏日穿搭howto",2],["柔性穿搭",2],
+  ["coquette",2],["轻亚入门",1],["幸棉",1],["幸棉内衣",1],["幸棉大U美背内衣",1],
+  ["美背内衣",1],["辣妹穿搭",1],["韩系穿搭",1],["露背装",1],["隐形内衣",1]
+];
+hBar("tagBar",tags.map((t,i)=>({l:t[0],v:t[1],c:i<5?"#ff2e4d":(i<11?"#ff7a8a":"#c2c8d6")})),{labelW:130,rowH:22});
+// 成长轨迹
+const growth=[
+  {t:"2025-01-24",v:20000,title:"♨️•ᴥ•♨️"},
+  {t:"2025-12-16",v:2917,title:"豹纹美甲💅"},
+  {t:"2025-12-27",v:5112,title:"game boyyy🎮"},
+  {t:"2025-12-31",v:3402,title:"2025年度18图"},
+  {t:"2026-02-17",v:5533,title:"Chinese New Year🥢🪭"},
+  {t:"2026-03-19",v:2281,title:"🩰购物分享｜167 50kg"},
+  {t:"2026-04-09",v:2293,title:"与她约会"},
+  {t:"2026-04-13",v:3584,title:"🍨购物分享｜167 50kg"},
+  {t:"2026-06-22",v:5929,title:"宅家小酌一杯🍺🐈"},
+  {t:"2026-06-25",v:7240,title:"隐形美背辣妹夏日内搭👙"},
+  {t:"2026-07-14",v:8856,title:"🐈"},
+  {t:"2026-07-29",v:5709,title:"🍨购物分享｜167 50kg"}
+].map(g=>({t:new Date(g.t).getTime(),v:g.v,title:g.title}));
+growthLine("growthLine",growth,1140);
+// 编年史列表
+const list=document.getElementById("growthList");
+[
+  ["2025-01-24","♨️•ᴥ•♨️","20000","17.5x"],
+  ["2025-12-16","豹纹美甲💅","2917","2.6x"],
+  ["2025-12-27","game boyyy🎮","5112","4.5x"],
+  ["2025-12-31","2025我的年度18图","3402","3.0x"],
+  ["2026-02-17","Chinese New Year🥢🪭","5533","4.9x"],
+  ["2026-03-19","🩰购物分享｜167 50kg","2281","2.0x"],
+  ["2026-04-09","与她约会","2293","2.0x"],
+  ["2026-04-13","🍨购物分享｜167 50kg","3584","3.1x"],
+  ["2026-06-22","宅家小酌一杯🍺🐈","5929","5.2x"],
+  ["2026-06-25","隐形美背辣妹夏日内搭👙","7240","6.4x"],
+  ["2026-07-14","🐈","8856","7.8x"],
+  ["2026-07-29","🍨购物分享｜167 50kg","5709","5.0x"]
+].forEach(r=>{
+  const row=document.createElement("div");row.className="timeline-row";
+  row.innerHTML=`<span class="d">${r[0]}</span><span class="t">${r[1]}</span><span class="v">${r[2]}</span><span class="badge">${r[3]}</span>`;
+  list.appendChild(row);
+});
+</script>
+</body>
+</html>
